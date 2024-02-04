@@ -4,7 +4,8 @@
       v-if="$page.component.toLowerCase().includes('dashboard')"
       href="#"
       target="_blank"
-      class="flex items-center gap-3 text-white bg-sky-600/70 hover:bg-sky-800 p-3 rounded-lg"
+      style="background-color:#0C3866 ;"
+      class="flex items-center gap-3 text-white  hover:bg-sky-800 p-3 rounded-lg"
     >
       <SendIcon :size="30" />
 

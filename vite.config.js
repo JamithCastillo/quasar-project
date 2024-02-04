@@ -24,4 +24,15 @@ export default defineConfig({
         sassVariables: 'resources/css/quasar-variables.sass'
       })
     ],
+        devServer: {
+          proxy: {
+            '^/api': {
+              target: 'http://192.168.1.2:8000', // Ajusta esto con la dirección IP y el puerto de tu servidor Laravel
+              changeOrigin: true,
+              pathRewrite: {
+                '^/api': '',
+              },
+            },
+          },
+        },
 });

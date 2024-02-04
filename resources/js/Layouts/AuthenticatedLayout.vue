@@ -12,19 +12,21 @@ const showingNavigationDropdown = ref(false);
 
 <template>
         <div class="bg-[url('/img/bg.jpg')]  bg-no-repeat bg-center bg-fixed bg-cover " >
-            <nav class="bg-white border-b border-gray-100">
+            <nav 
+            style="background-color:#0C3866 ;"
+            class="border-b border-gray-100">
                 <!-- Primary Navigation Menu -->
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
+                    <div class="flex justify-between h-12">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
                                 <Link :href="route('dashboard')">
                                     <img
-        src="/img/logo.png"
+        src="/img/logo-elj-white.svg"
         alt="logo"
         text="Spa"
-        class="w-[200px] p-3 hover:bg-gray-300/50 rounded-xl"
+        class="w-[65px]  hover:bg-gray-300/50 rounded-xl"
         :class="{
           'sm:mr-5':
             $page.component == 'Auth/Login' || $page.component == `Index`,
@@ -40,7 +42,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
-                                <Dropdown align="right" width="48">
+                                <dropdown align="right" width="48">
                                     <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button

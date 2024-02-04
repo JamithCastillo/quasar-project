@@ -37,33 +37,39 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="email" value="Correo Electrónico" />
-
-                <TextInput
+                
+                <!-- <InputLabel for="email" value="Correo Electrónico" /> -->
+                <div class="field flex flex-col-2  sm:justify-center items-center ">
+                    <i aria-hidden="true" class="text-lg text-cyan-900	 q-icon q-field-icon q-field-margin material-icons">email</i>
+                <input
                     id="email"
                     type="email"
-                    class="mt-1 block w-full"
+                    class="mt-1 block hover:ring-0 outline-0	outline-inherit	 focus:ring-0 ring-0"
                     v-model="form.email"
                     required
-                    autofocus
-                    autocomplete="username"
+                    placeholder="Email"
                 />
+                <div class="line"></div>
+</div>
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Contraseña" />
-
-                <TextInput
+                
+                <div class="field flex flex-col-2  sm:justify-center items-center ">
+                    <i aria-hidden="true" class="text-lg text-cyan-900 q-icon q-field-icon q-field-margin material-icons">lock</i>
+                <input
                     id="password"
                     type="password"
-                    class="mt-1 block w-full"
+                    class="mt-1 block hover:ring-0 focus:ring-0 ring-0"
                     v-model="form.password"
                     required
-                    autocomplete="current-password"
+                    placeholder="Password"
                 />
-
+                <div class="line"></div>
+</div>
+               
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
@@ -74,7 +80,7 @@ const submit = () => {
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center py-9 justify-center mt-4">
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
@@ -83,10 +89,50 @@ const submit = () => {
                     Forgot your password?
                 </Link>
 
-                <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="ml-4  " :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Iniciar sesion
                 </PrimaryButton>
             </div>
         </form>
     </GuestLayout>
 </template>
+<style>
+
+input {
+  background: 0;
+  border: 0;
+  outline: none;
+  width: 27vw;
+  max-width: 400px;
+  font-size: 1.5em;
+  /* transition: padding 0.3s 0.2s ease; */
+}
+input:focus {
+  padding-bottom: 5px;
+  outline: 2px solid red;
+}
+input:focus + .line:after {
+  transform: scaleX(1);
+}
+.field {
+  position: relative;
+}
+.field .line {
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  bottom: -8px;
+  background: #bdc3c7;
+}
+.field .line:after {
+  content: " ";
+  position: absolute;
+  float: right;
+  width: 100%;
+  height: 2px;
+  transform: scalex(0);
+  transition: transform 0.3s ease;
+  background: #000000;
+}
+
+</style>

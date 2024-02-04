@@ -47,7 +47,7 @@ const submit = () => {
         >
         <button  
             title="Guardar datos rellenados en el formulario"
-            class="flex items-center rounded-xl text-green-600  font-semibold  hover:bg-gray-400/20 p-2 sm:p-2"
+            class="flex items-center rounded-xl text-cyan-600	  font-semibold  hover:bg-gray-400/20 p-2 sm:p-2"
              
           >
             Guardar
