@@ -11,7 +11,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-        <div class="bg-[url('/img/bg.jpg')]  bg-no-repeat bg-center bg-fixed bg-cover " >
+        <div class="bg-slate-300" >
             <nav 
             style="background-color:#0C3866 ;"
             class="border-b border-gray-100">
